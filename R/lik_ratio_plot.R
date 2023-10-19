@@ -1,3 +1,16 @@
+#' Generate likelihood ratio plot
+#'
+#' @param LR Likelihood ratio
+#' @param LR_interval Uncertainty interval for likelihood ratio
+#' @param prior_odds Prior odds estimate
+#' @param prior_odds_interval Uncertainty interval for prior odds estimate
+#' @param plot_rounding_digits Number of digits after decimal for rounding on plot (default, 2)
+#'
+#' @return Likelihood ratio plot
+#' @export
+#'
+#' @examples
+#' lr_plot(10, c(8, 12), .8, c(.6, 1))
 lr_plot <- function(LR, LR_interval,
                     prior_odds,
                     prior_odds_interval, plot_rounding_digits=2)

@@ -1,12 +1,13 @@
 Package: likRatioPlot
-Title: What the Package Does (One Line, Title Case)
+Title: Visualization of Effect of Uncertainty in Prior odds and Likelihood Ratio on Posterior Odds
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Jordan", "Rodu", , "jordan.rodu@virginia.edu", role = c("aut", "cre"))
+Description: This package allows users to create a plot describing the effects of uncertainty in the
+    prior odds and likelihood ratio on the posterior odds.  A shaded trapezoid describes the uncertainty
+    area, and dashed lines project the bounds of the trapezoid to the prior odds and posterior odds axes.
+    The uncertainty trapezoid can be directly compared to a posterior odds of 1.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
