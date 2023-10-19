@@ -10,8 +10,8 @@
 #' @export
 #'
 #' @examples
-#' lr_plot(10, c(8, 12), .8, c(.6, 1))
-lr_plot <- function(LR, LR_interval,
+#' lik_ratio_plot(10, c(8, 12), .8, c(.6, 1))
+lik_ratio_plot <- function(LR, LR_interval,
                     prior_odds,
                     prior_odds_interval, plot_rounding_digits=2)
 {
