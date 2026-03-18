@@ -29,14 +29,19 @@ lik_ratio_plot <- function(LR, LR_interval,
     ggplot2::geom_abline(slope=LR) +
     ggplot2::geom_abline(slope=min(LR_interval), linetype="dashed") +
     ggplot2::geom_abline(slope=max(LR_interval), linetype="dashed") +
+    ggplot2::geom_hline(yintercept=0) +
+    ggplot2::geom_vline(xintercept=0) +
     ggplot2::geom_vline(xintercept=min(prior_odds), color="blue", alpha=.7) +
     ggplot2::geom_vline(xintercept=min(prior_odds_interval), linetype="dashed", color="blue", alpha=.7) +
     ggplot2::geom_vline(xintercept=max(prior_odds_interval), linetype="dashed", color="blue", alpha=.7) +
     ggplot2::geom_hline(yintercept=max(prior_odds_interval)*max(LR_interval), linetype="dashed", color="orange")+
     ggplot2::geom_hline(yintercept=min(prior_odds_interval)*min(LR_interval), linetype="dashed", color="orange")+
     ggplot2::geom_hline(yintercept=prior_odds*LR, color="orange")+
+    ggplot2::geom_segment(ggplot2::aes(x=0, xend=0, y=min(prior_odds_interval)*min(LR_interval),
+                          yend=max(prior_odds_interval)*max(LR_interval)), color="orange", linewidth=1.2) +
     ggplot2::geom_ribbon(ggplot2::aes(x=data$x, ymin=data$y_min, ymax=data$y_max), fill="orange", alpha=.5) +
     ggplot2::geom_hline(yintercept=1, linewidth=1.2, color="brown") +
+    ggplot2::coord_cartesian(clip="off") +
     ggplot2::scale_x_continuous(limits = c(0, NA), expand=ggplot2::expansion(mult=c(0,.05)),
                        breaks = my_breaks$x_breaks, labels = my_labels$x_labels) +
     ggplot2::scale_y_continuous(limits=c(0, NA), expand=ggplot2::expansion(mult=c(0,.05)),
@@ -47,6 +52,6 @@ lik_ratio_plot <- function(LR, LR_interval,
       panel.background = ggplot2::element_rect(fill="white"),
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
-      axis.line = ggplot2::element_line()) +
+      axis.line = ggplot2::element_blank()) +
     ggplot2::ggtitle(title)
 }
