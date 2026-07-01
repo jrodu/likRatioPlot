@@ -4,6 +4,7 @@
 # likRatioPlot
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The package likRatioPlot provides a function to generate a plot that
@@ -35,4 +36,4 @@ library(likRatioPlot)
 lik_ratio_plot(10, c(8, 12), .8, c(.6, 1))
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example-1.png" alt="" width="100%" />
